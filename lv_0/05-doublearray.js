@@ -10,7 +10,25 @@
 
 const solution = (numbers) => numbers.map((item) => item * 2);
 
-// 참고할만한 다른 풀이
+// 참고할만한 다른 풀이 : reduce 함수 사용법 익히기
 function solution(numbers) {
   return numbers.reduce((a, b) => [...a, b * 2], []);
 }
+/*
+  예시 입력
+  let numbers = [1, 2, 3]
+  1. 초기상태
+    a = [] 빈배열
+    b = 1 (첫 번째 요소)
+  2. 첫 번째 반복
+    a = []
+    b = 1
+    콜백함수 결과 : [...a, 1 * 2]
+    a = [2]
+  3. 두 번째 반복
+    a = [2]
+    b = 2
+    콜백함수 결과 : [2, 2 * 2]
+    a = [2, 4]
+  ... 모든 요소에 대해 반복.
+*/
