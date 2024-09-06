@@ -11,22 +11,24 @@
 
 // 내가 제출한 정답 : && 연산자를 이용하여 조건을 다 써줬음.
 const solution = (my_string) => {
-  let answer = '';
+  let answer = "";
   for (let i = 0; i < my_string.length; i++) {
-      if (my_string[i] !== 'a' && 
-          my_string[i] !== 'e' &&
-          my_string[i] !== 'i' &&
-          my_string[i] !== 'o' &&
-          my_string[i] !== 'u') {
-          answer += my_string[i];
-      }
+    if (
+      my_string[i] !== "a" &&
+      my_string[i] !== "e" &&
+      my_string[i] !== "i" &&
+      my_string[i] !== "o" &&
+      my_string[i] !== "u"
+    ) {
+      answer += my_string[i];
+    }
   }
   return answer;
-}
+};
 
 // 참고할만한 다른 답 (1) replace + 정규 표현식를 사용
 function solution(my_string) {
-  return my_string.replace(/[aeiou]/g, '');
+  return my_string.replace(/[aeiou]/g, "");
 }
 /*
   1. replace 메서드 : 자바스크립트에서 문자열 내의 일부 텍스트를 다른 텍스트로 대체하는 데 사용되는 메서드.
@@ -40,7 +42,12 @@ function solution(my_string) {
 
 // 참고할만한 다른 답 (2) filter, includes 메서드를 활용
 function solution(my_string) {
-  return Array.from(my_string).filter(t => !['a', 'e', 'i', 'o', 'u'].includes(t)).join('');
+  return Array.from(my_string)
+    .filter((t) => !["a", "e", "i", "o", "u"].includes(t))
+    .join("");
 }
 /*
-  1. 
+  1. Array.from() 메서드는 문자열을 한 글자씩 분리하여, 각각의 문자를 요소로 갖는 배열을 생성한다.
+  2. .includes(t)는 현재 문자 t가 a, e, i, o, u인지 확인하는 메서드.
+  3. join() 메서드는 배열의 모든 요소를 빈문자열로 연결하여 하나의 문자열로 만듬.
+*/
